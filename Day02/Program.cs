@@ -118,51 +118,70 @@ internal static class Day02
 
 		int numberOfSafeReports = 0;
 
-
 		foreach (string line in lines)
 		{
 			var levels = line.Split(" ").ToList();
-			int previousValue = int.Parse(levels[0]);
-			levels.RemoveAt(0);
-			ReactorState reactorState = ReactorState.Neutral;
 
-			bool safe = true;
-
-			foreach (string level in levels)
-			{
-				int value = int.Parse(level);
-				int absChange = int.Abs(value - previousValue);
-				if (value > previousValue)
-				{
-					if (reactorState == ReactorState.Decreasing)
-					{
-						safe = false;
-						break;
-					}
-					reactorState = ReactorState.Increasing;
-				}
-				else if (value < previousValue)
-				{
-					if (reactorState == ReactorState.Increasing)
-					{
-						safe = false;
-						break;
-					}
-					reactorState = ReactorState.Decreasing;
-				}
-				if (absChange < 1 || absChange > 3)
-				{
-					safe = false;
-					break;
-				}
-				previousValue = value;
-			}
-			if (safe)
+			if (IsSafe([.. levels]))
 			{
 				numberOfSafeReports += 1;
+				continue;
+			}
+
+			// check iterations
+			for (int i = 0; i < levels.Count; i++)
+			{
+				List<string> dampenedLevels = new(levels);
+				dampenedLevels.RemoveAt(i);
+				if (IsSafe(dampenedLevels))
+				{
+					numberOfSafeReports += 1;
+					break;
+				}
 			}
 		}
 
 		Console.WriteLine(numberOfSafeReports);
+	}
+
+	private static bool IsSafe(List<string> levels)
+	{
+		int previousValue = int.Parse(levels[0]);
+		levels.RemoveAt(0);
+		ReactorState reactorState = ReactorState.Neutral;
+
+		bool safe = true;
+
+		foreach (string level in levels)
+		{
+			int value = int.Parse(level);
+			int absChange = int.Abs(value - previousValue);
+			if (value > previousValue)
+			{
+				if (reactorState == ReactorState.Decreasing)
+				{
+					safe = false;
+					break;
+				}
+				reactorState = ReactorState.Increasing;
+			}
+			else if (value < previousValue)
+			{
+				if (reactorState == ReactorState.Increasing)
+				{
+					safe = false;
+					break;
+				}
+				reactorState = ReactorState.Decreasing;
+			}
+			if (absChange < 1 || absChange > 3)
+			{
+				safe = false;
+				break;
+			}
+			previousValue = value;
+		}
+		return safe;
+
 	}
 }
