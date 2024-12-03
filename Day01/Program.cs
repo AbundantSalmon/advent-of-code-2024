@@ -1,7 +1,5 @@
 ﻿namespace Day01;
 
-using System.Collections;
-
 class DuplicateValuesComparer : IComparer<int>
 {
     public int Compare(int x, int y)

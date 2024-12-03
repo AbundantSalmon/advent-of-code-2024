@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.Tracing;
-
-namespace Day02;
+﻿namespace Day02;
 
 enum ReactorState
 {
