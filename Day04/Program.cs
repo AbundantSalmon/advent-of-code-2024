@@ -188,87 +188,50 @@ internal static class Day04
             for (int x = 0; x < row.Count; x++)
             {
 
-                // char value = row[x];
+                char value = row[x];
 
-                // if (value != 'X')
-                // {
-                //     continue;
-                // }
+                if (value != 'M')
+                {
+                    continue;
+                }
 
-                // // forwards horizontal
-                // if (x >= 0 && x <= row.Count - 4)
-                // {
-                //     if (row[x + 1] == 'M' && row[x + 2] == 'A' && row[x + 3] == 'S')
-                //     {
-                //         sum++;
-                //     }
-                // }
-                // // backwards horizontal
-                // if (x >= 3 && x <= row.Count)
-                // {
-                //     if (row[x - 1] == 'M' && row[x - 2] == 'A' && row[x - 3] == 'S')
-                //     {
-                //         sum++;
-                //     }
-                // }
+                // down-right
+                if (x >= 0 && x <= row.Count - 3 && y >= 0 && y <= grid.Count - 3)
+                {
+                    if (grid[y + 1][x + 1] == 'A' && grid[y + 2][x + 2] == 'S')
+                    {
+                        if ((grid[y][x + 2] == 'M' && grid[y + 2][x] == 'S') || (grid[y][x + 2] == 'S' && grid[y + 2][x] == 'M'))
+                        {
 
-                // // forwards vertical
-                // if (y >= 0 && y <= grid.Count - 4)
-                // {
-                //     if (grid[y + 1][x] == 'M' && grid[y + 2][x] == 'A' && grid[y + 3][x] == 'S')
-                //     {
-                //         sum++;
-                //     }
-                // }
+                            sum++;
+                        }
+                    }
 
-                // // backwards vertical
-                // if (y >= 3 && y <= grid.Count)
-                // {
-                //     if (grid[y - 1][x] == 'M' && grid[y - 2][x] == 'A' && grid[y - 3][x] == 'S')
-                //     {
-                //         sum++;
-                //     }
-                // }
+                }
 
-                // // down-right
-                // if (x >= 0 && x <= row.Count - 4 && y >= 0 && y <= grid.Count - 4)
-                // {
-                //     if (grid[y + 1][x + 1] == 'M' && grid[y + 2][x + 2] == 'A' && grid[y + 3][x + 3] == 'S')
-                //     {
-                //         sum++;
-                //     }
 
-                // }
+                // up-left
+                if (x >= 2 && x <= row.Count && y >= 2 && y <= grid.Count)
+                {
+                    if (grid[y - 1][x - 1] == 'A' && grid[y - 2][x - 2] == 'S')
+                    {
+                        if ((grid[y][x - 2] == 'M' && grid[y - 2][x] == 'S') || (grid[y][x - 2] == 'S' && grid[y - 2][x] == 'M'))
+                        {
 
-                // // down-left
-                // if (x >= 3 && x <= row.Count && y >= 0 && y <= grid.Count - 4)
-                // {
-                //     if (grid[y + 1][x - 1] == 'M' && grid[y + 2][x - 2] == 'A' && grid[y + 3][x - 3] == 'S')
-                //     {
-                //         sum++;
-                //     }
+                            sum++;
+                        }
+                    }
 
-                // }
+                }
 
-                // // up-right
-                // if (x >= 0 && x <= row.Count - 4 && y >= 3 && y <= grid.Count)
-                // {
-                //     if (grid[y - 1][x + 1] == 'M' && grid[y - 2][x + 2] == 'A' && grid[y - 3][x + 3] == 'S')
-                //     {
-                //         sum++;
-                //     }
+                /*
+                  s m/s
+                   a
+                s/m m m/s
+                     a
+                  s/m s
 
-                // }
-
-                // // up-left
-                // if (x >= 3 && x <= row.Count && y >= 3 && y <= grid.Count)
-                // {
-                //     if (grid[y - 1][x - 1] == 'M' && grid[y - 2][x - 2] == 'A' && grid[y - 3][x - 3] == 'S')
-                //     {
-                //         sum++;
-                //     }
-
-                // }
+                */
 
             }
         }
