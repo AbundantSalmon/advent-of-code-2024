@@ -6,7 +6,7 @@ internal static class Day04
     {
         const string inputFile = "input.txt";
 
-        Console.WriteLine("Day03!");
+        Console.WriteLine("Day04!");
 
         List<string> lines = [];
 
