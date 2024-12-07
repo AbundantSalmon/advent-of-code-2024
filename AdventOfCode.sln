@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# 
+#
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day01", "Day01\Day01.csproj", "{B7FDAC25-A94B-46E8-84CF-FB943C1DA4C8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day02", "Day02\Day02.csproj", "{817EE8CA-8F90-433D-93A8-8B7B0D3B18D0}"
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day06", "Day06\Day06.csproj", "{34674776-82F1-4D04-8FC8-B75CB277DFE5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day07", "Day07\Day07.csproj", "{C0FCBF84-D50C-407D-BE52-DFA5A28C809B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day08", "Day08\Day08.csproj", "{D693ECE9-D1D0-4C5B-85A9-0E11014D0996}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,5 +51,9 @@ Global
 		{C0FCBF84-D50C-407D-BE52-DFA5A28C809B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0FCBF84-D50C-407D-BE52-DFA5A28C809B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0FCBF84-D50C-407D-BE52-DFA5A28C809B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D693ECE9-D1D0-4C5B-85A9-0E11014D0996}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D693ECE9-D1D0-4C5B-85A9-0E11014D0996}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D693ECE9-D1D0-4C5B-85A9-0E11014D0996}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D693ECE9-D1D0-4C5B-85A9-0E11014D0996}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
